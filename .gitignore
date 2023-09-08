@@ -5,4 +5,7 @@
 *.wav
 *.mp3
 
+secret.json
+
 .DS_Store
+__pycache__/

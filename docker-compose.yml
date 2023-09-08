@@ -13,6 +13,21 @@ services:
       - portainer-data:/data
       - /var/run/docker.sock:/var/run/docker.sock
     restart: unless-stopped
+
+  # flask:
+  #   container_name: flask-app
+  #   restart: always
+  #   build:
+  #     dockerfile: Dockerfile
+  #     context: ./app/.
+  #   image: flask-app-image
+  #   depends_on:
+  #     - magenta
+  #   volumes:
+  #     - ./app:/app
+  #   ports:
+  #     - 5000:5000 # host : docker port
+
   magenta:
     platform: linux/amd64
     image: xychelsea/magenta:latest-jupyter

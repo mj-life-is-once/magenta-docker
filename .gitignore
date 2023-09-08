@@ -1,0 +1,8 @@
+/volume/magenta/generated/*
+
+# ignore all music files
+*.mid
+*.wav
+*.mp3
+
+.DS_Store

@@ -1,0 +1,26 @@
+version: "3.7"
+
+networks:
+  default:
+    driver: bridge
+
+services:
+  portainer:
+    image: portainer/portainer-ce:latest
+    ports:
+      - "9000:9000"
+    volumes:
+      - portainer-data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
+  magenta:
+    platform: linux/amd64
+    image: xychelsea/magenta:latest-jupyter
+    container_name: magenta
+    restart: always
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./volume/magenta:/usr/local/magenta/workspace
+volumes:
+  portainer-data:

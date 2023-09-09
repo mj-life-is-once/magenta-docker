@@ -1,13 +1,24 @@
 import glob
+import json
 import logging
 import os
 import subprocess
 
-from flask import Flask, request
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+from flask_swagger_ui import get_swaggerui_blueprint
 from gdrive import GDrive
 
 app = Flask(__name__)
 gd = GDrive("secret.json")
+
+SWAGGER_URL = "/swagger"
+API_URL = "http://127.0.0.1:5000/swagger.json"
+swaggerui_blueprint = get_swaggerui_blueprint(
+    SWAGGER_URL, API_URL, config={"app_name": "Magenta Music Generator"}
+)
+app.register_blueprint(swaggerui_blueprint, url_prefix=SWAGGER_URL)
+CORS(app)
 
 
 def scanAndUpload(path):
@@ -76,6 +87,12 @@ def drive():
     target_path = f"{parent_path}/volume/magenta/generated/polyphony_rnn"
     result = scanAndUpload(target_path)
     return f"<p>{result}</p>"
+
+
+@app.route("/swagger.json")
+def swagger():
+    with open("swagger.json", "r") as f:
+        return jsonify(json.load(f))
 
 
 @app.route("/")

@@ -80,7 +80,7 @@ def drive():
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return "<p>Welcome to the Music Generator App</p>"
 
 
 if __name__ == "__main__":

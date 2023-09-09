@@ -1,7 +1,7 @@
 # Magenta Docker Compose
 
 - This is a docker-compose implementation of [Magenta](https://magenta.tensorflow.org/) Based on [xychelsea's repo](https://github.com/xychelsea/magenta-docker).
-- Tested with MacOS Ventura 13.5.1(Intel), Docker version 4.22.1
+- Tested with MacOS Ventura 13.5.1(M1), Docker version 4.22.1
 
 ## How to Run
 

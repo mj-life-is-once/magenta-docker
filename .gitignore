@@ -9,3 +9,6 @@ secret.json
 
 .DS_Store
 __pycache__/
+
+# virtual environment
+app/app-env/

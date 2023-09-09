@@ -94,7 +94,7 @@ polyphony_rnn_generate \
 
 
 # In VM
-docker exec magenta polyphony_rnn_generate \
+sudo docker exec magenta polyphony_rnn_generate \
 --bundle_file=/home/anaconda/workspace/models/polyphony_rnn.mag \
 --output_dir=/home/anaconda/workspace/generated/polyphony_rnn \
 --num_outputs=1 \
@@ -105,3 +105,11 @@ docker exec magenta polyphony_rnn_generate \
 --condition_on_primer=false \
 --inject_primer_during_generation=true
 ```
+
+```
+sudo apt install python3.8-venv
+python -m venv app-env
+source app-env/bin/activate
+```
+
+`flask --app app run --debug`

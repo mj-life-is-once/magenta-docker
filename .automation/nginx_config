@@ -1,0 +1,7 @@
+server {
+  listen 80;
+  server_name <external_server_ip>;
+  location / {
+    proxy_pass http://<internal_server_ip>:5000;
+  }
+}

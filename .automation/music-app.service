@@ -1,0 +1,9 @@
+[Unit]
+Description=Gunicorn instance to serce project
+After=network.target
+[Service]
+User=root
+WorkingDirectory=/home/minjoolisa_cho/development/magenta/app/
+Environment="PATH=/home/minjoolisa_cho/development/magenta/app/app-env/bin"
+ExecStart=/home/minjoolisa_cho/development/magenta/app/app-env/bin/gunicorn --bind 0.0.0.0:5000 wsgi:app
+[Install]

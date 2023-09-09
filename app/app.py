@@ -13,7 +13,7 @@ app = Flask(__name__)
 gd = GDrive("secret.json")
 
 SWAGGER_URL = "/swagger"
-API_URL = "http://10.142.0.4:5000/swagger.json"
+API_URL = "http://<external_ip>:5000/swagger.json"
 swaggerui_blueprint = get_swaggerui_blueprint(
     SWAGGER_URL, API_URL, config={"app_name": "Magenta Music Generator"}
 )

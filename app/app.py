@@ -103,3 +103,5 @@ def hello_world():
 if __name__ == "__main__":
     format = "%(asctime)s: %(message)s"
     logging.basicConfig(format=format, level=logging.INFO, datefmt="%H:%M:%S")
+
+    # command to run : `flask --app app run --debug`

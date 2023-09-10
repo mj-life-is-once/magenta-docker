@@ -2,6 +2,15 @@
 
 - source : [https://alex-volkov.medium.com/how-to-deploy-flask-on-google-cloud-gcp-compute-engine-with-gunicorn-nginx-systemd-96da1f32a11a](https://alex-volkov.medium.com/how-to-deploy-flask-on-google-cloud-gcp-compute-engine-with-gunicorn-nginx-systemd-96da1f32a11a)
 
+## 0. Install python virtual environment
+
+```
+sudo apt install python3.8-venv
+python -m venv app-env
+# app-env is your environment name
+source app-env/bin/activate
+```
+
 ## 1. Install Gunicorn
 
 ```

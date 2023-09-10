@@ -66,7 +66,7 @@ docker exec melody_rnn_generate \
 
 # List of example commands
 
-## melodyRNNGenerate
+## 1. melodyRNNGenerate
 
 ```
 melody_rnn_generate \
@@ -78,7 +78,7 @@ melody_rnn_generate \
  --primer_melody="[60]"
 ```
 
-# polyphonyRNN
+# 2. polyphonyRNN
 
 ```
 polyphony_rnn_generate \
@@ -91,25 +91,8 @@ polyphony_rnn_generate \
 "69, -2, -2, -2, 67, -2, -2, -2, -2, -2, -2, -2]" \
 --condition_on_primer=false \
 --inject_primer_during_generation=true
-
-
-# In VM
-sudo docker exec magenta polyphony_rnn_generate \
---bundle_file=/home/anaconda/workspace/models/polyphony_rnn.mag \
---output_dir=/home/anaconda/workspace/generated/polyphony_rnn \
---num_outputs=1 \
---num_steps=128 \
---primer_melody="[60, -2, -2, -2, 60, -2, -2, -2, "\
-"67, -2, -2, -2, 67, -2, -2, -2, 69, -2, -2, -2, "\
-"69, -2, -2, -2, 67, -2, -2, -2, -2, -2, -2, -2]" \
---condition_on_primer=false \
---inject_primer_during_generation=true
 ```
 
-```
-sudo apt install python3.8-venv
-python -m venv app-env
-source app-env/bin/activate
-```
+# Deployment in the GCP server
 
-`flask --app app run --debug`
+Find more detailed instruction in this [README.md](./.automation/README.md) file and my [blog post](https://experiments.minjoocho.com/blog/musicGeneration)
